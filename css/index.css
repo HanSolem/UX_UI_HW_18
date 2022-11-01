@@ -132,7 +132,6 @@ button {
         column-gap: 20px;
     }
     .workGrid {
-        grid-template-rows: 1fr;
         grid-template-columns: 1fr;
         grid-template-areas: 
         "nsa"
