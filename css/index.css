@@ -69,8 +69,6 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     column-gap: 20px;
 }
-.flexContainer img {
-    min-width: 300px;}
 h3 {
     background-color: #65C8D6;
     padding: 10px;
@@ -80,26 +78,31 @@ h3 {
     text-align: center;
 }
 .workGrid {
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    flex: auto;
+    display: grid;
+    grid-template-areas: "nsa collectively portfolio";
+    grid-template-columns: 33% 33% 33%;
 }
-.gridItem {
-    padding-left: 30px;
-    padding-right: 30px;
+.item1 {
+    grid-area: nsa;
     font-size: 30px;
     text-align: center;
     color: #3C4048;    
     font-family: Arial, Helvetica, sans-serif;
   }
-.gridItem button {
-    font-size: x-large;
-    padding: 20px;
-    background-color: #65C8D6;
-    color: white;
-    border: white;
-}
+  .item2 {
+    grid-area: collectively;
+    font-size: 30px;
+    text-align: center;
+    color: #3C4048;    
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .item3 {
+    grid-area: portfolio;
+    font-size: 30px;
+    text-align: center;
+    color: #3C4048;    
+    font-family: Arial, Helvetica, sans-serif;
+  }
 section {
     margin: 20px;
     min-height: 700px;
@@ -118,4 +121,22 @@ button {
 }
 .gridItem img {
     box-shadow: 10px 10px 15px #7d7d7e;
+}
+
+@media only screen and (max-width: 600px) {
+    .flexContainer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        column-gap: 20px;
+    }
+    .workGrid {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nsa"
+        "collectively"
+        "portfolio";
+    }
 }
